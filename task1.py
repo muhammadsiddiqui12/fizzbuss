@@ -10,3 +10,9 @@ def isLineInPage():
         upperLimit = 25 + ((int(x) - 1) * 25)
         if lineNumber >= lowerLimit and lineNumber <= upperLimit:
             return True
+
+with open('output.txt', 'a') as f1:
+    for line in open(filename + '.txt'):
+        lineNumber = lineNumber + 1
+        if isLineInPage():
+            f1.write(line)
